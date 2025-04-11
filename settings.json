@@ -1,0 +1,159 @@
+{
+  //--------------------------------------------------------------------------
+  // Editor Settings
+  //--------------------------------------------------------------------------
+  "editor.wordWrap": "on", // Wrap lines that exceed viewport width
+  "editor.tabSize": 2, // Number of spaces a tab is equal to
+  "editor.indentSize": "tabSize", // Indentation size uses tabSize
+  "editor.detectIndentation": false, // Don't automatically detect indentation; use tabSize/indentSize
+  "editor.tabCompletion": "on", // Enable tab completion (suggests based on context)
+  "editor.rulers": [
+    80,
+    120
+  ], // Vertical rulers at specified columns
+  "editor.minimap.enabled": false, // Disable the minimap
+  "editor.formatOnSave": true, // Format code automatically using the default formatter when saving
+  "editor.linkedEditing": true, // Auto-update matching HTML/JSX tags when renaming one
+  "editor.suggest.insertMode": "replace", // Typing suggestion replaces text instead of inserting
+  "editor.inlineSuggest.enabled": true, // Show inline suggestions (GitHub Copilot)
+  "editor.bracketPairColorization.enabled": true, // Colorize matching brackets
+  "editor.guides.bracketPairs": "active", // Highlight active bracket pair guide
+  //--------------------------------------------------------------------------
+  // ESLint Integration (Requires dbaeumer.vscode-eslint extension)
+  //--------------------------------------------------------------------------
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit", // Auto-fix ESLint issues on save (relies on project's .eslintrc config)
+    "source.organizeImports": "explicit" // Organize imports on save
+  },
+  "eslint.validate": [ // Languages ESLint should check
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html"
+  ],
+  "eslint.format.enable": true, // Allow ESLint to contribute formatting fixes via code actions
+  //--------------------------------------------------------------------------
+  // Workbench / Window Appearance & Layout
+  //--------------------------------------------------------------------------
+  "workbench.colorTheme": "Default Light Modern", // UI theme
+  "window.autoDetectColorScheme": true, // Auto-detect OS color scheme (light/dark) - Not synced via Settings Sync
+  "workbench.sideBar.location": "right", // Show sidebar on the right
+  "workbench.startupEditor": "none", // Don't show welcome page on startup
+  "explorer.compactFolders": true, // Display nested folders more compactly
+  //--------------------------------------------------------------------------
+  // Files & Saving
+  //--------------------------------------------------------------------------
+  "files.autoSave": "onFocusChange", // Auto-save files when editor loses focus
+  "files.exclude": {
+    "**/.git": false, // Keep .git visible
+  },
+  "files.associations": {
+    // Ensure wrangler config is treated as TOML (basic syntax highlighting)
+    "wrangler.toml": "toml"
+  },
+  //--------------------------------------------------------------------------
+  // Language Features (TypeScript/JavaScript Built-in)
+  //--------------------------------------------------------------------------
+  // Auto-update imports when files are moved/renamed
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  //--------------------------------------------------------------------------
+  // Language Specific Settings (Using Built-in Formatters)
+  //--------------------------------------------------------------------------
+  // Ensures VS Code's built-in formatters are used for core web languages.
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": { // For JSX
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": { // For TSX
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  //--------------------------------------------------------------------------
+  // Remote Development (SSH) Enhancements (Requires ms-vscode-remote.remote-ssh)
+  //--------------------------------------------------------------------------
+  // Automatically forward common web development ports when connecting via SSH.
+  // Add/remove ports specific to your workflow (e.g., Hugo's 1313, Vite's 5173)
+  "remote.SSH.defaultForwardedPorts": [
+    {
+      "localPort": 3000,
+      "remotePort": 3000,
+      "name": "Vite (3000)"
+    },
+    {
+      "localPort": 8787,
+      "remotePort": 8787,
+      "name": "Cloudflare Pages (8787)"
+    },
+    {
+      "localPort": 8788,
+      "remotePort": 8788,
+      "name": "Cloudflare Workers (8788)"
+    },
+    {
+      "localPort": 1313,
+      "remotePort": 1313,
+      "name": "Hugo (1313)"
+    }
+  ],
+  //--------------------------------------------------------------------------
+  // Terminal Settings (Built-in)
+  //--------------------------------------------------------------------------
+  "terminal.integrated.scrollback": 5000, // Increase terminal history buffer size
+  //--------------------------------------------------------------------------
+  // GitHub Copilot Settings (Requires GitHub.copilot and GitHub.copilot-chat)
+  //--------------------------------------------------------------------------
+  // General Copilot Settings
+  "github.copilot.enable": {
+    "scminput": true, // Enable Copilot in Source Control commit message box
+    "plaintext": true, // Enable Copilot in plain text files
+    "markdown": true // Enable Copilot in Markdown files
+  },
+  "github.copilot.nextEditSuggestions.enabled": true, // Enable suggestions based on recent edits
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot", // Specify the Copilot model
+  // Copilot Chat Settings
+  "github.copilot.chat.codesearch.enabled": true, // Enable code search feature in chat
+  "github.copilot.chat.newWorkspaceCreation.enabled": true, // Allow chat to create new workspaces
+  "github.copilot.chat.search.semanticTextResults": true, // Enable semantic text search results
+  "github.copilot.chat.languageContext.typescript.enabled": true, // Enable TypeScript context for chat
+  "github.copilot.chat.completionContext.typescript.mode": "on", // Use TypeScript context for completions
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true, // Allow chat to use TS context for fixes
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true, // Allow chat to use TS context for inline suggestions
+  // Copilot Chat Agent Settings (Experimental/Advanced)
+  "chat.agent.enabled": true, // Enable the chat agent
+  "chat.agent.maxRequests": 30, // Maximum number of requests per agent session
+  "github.copilot.chat.agent.thinkingTool": true, // Allow the agent to use a "thinking" tool
+  //--------------------------------------------------------------------------
+  // Extension Management
+  //--------------------------------------------------------------------------
+  "extensions.ignoreRecommendations": true, // Don't show extension recommendations
+  //--------------------------------------------------------------------------
+  // Settings Sync
+  //--------------------------------------------------------------------------
+  "settingsSync.ignoredSettings": [
+    // Don't sync the autoDetectColorScheme setting (often machine-specific)
+    "window.autoDetectColorScheme"
+  ],
+  //--------------------------------------------------------------------------
+  // Telemetry & Privacy
+  //--------------------------------------------------------------------------
+  "telemetry.telemetryLevel": "off", // Disable telemetry data collection
+  "telemetry.feedback.enabled": false // Disable feedback prompts/features
+}
