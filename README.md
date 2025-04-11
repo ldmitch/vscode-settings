@@ -2,4 +2,4 @@
 
 - Settings: [settings.json](settings.json)
 
-Try VS Code: [https://zed.dev/](https://code.visualstudio.com/download)
+Try VS Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
