@@ -93,9 +93,9 @@
   // Add/remove ports specific to your workflow (e.g., Hugo's 1313, Vite's 5173)
   "remote.SSH.defaultForwardedPorts": [
     {
-      "localPort": 3000,
-      "remotePort": 3000,
-      "name": "Vite (3000)"
+      "localPort": 5173,
+      "remotePort": 5173,
+      "name": "Vite (5173)"
     },
     {
       "localPort": 8787,
