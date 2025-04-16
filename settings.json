@@ -93,24 +93,24 @@
   // Add/remove ports specific to your workflow (e.g., Hugo's 1313, Vite's 5173)
   "remote.SSH.defaultForwardedPorts": [
     {
-      "localPort": 5173,
-      "remotePort": 5173,
-      "name": "Vite (5173)"
+      "localPort": 3000,
+      "remotePort": 3000,
+      "name": "Vite"
     },
     {
       "localPort": 8787,
       "remotePort": 8787,
-      "name": "Cloudflare Pages (8787)"
+      "name": "Cloudflare Pages"
     },
     {
       "localPort": 8788,
       "remotePort": 8788,
-      "name": "Cloudflare Workers (8788)"
+      "name": "Cloudflare Workers"
     },
     {
       "localPort": 1313,
       "remotePort": 1313,
-      "name": "Hugo (1313)"
+      "name": "Hugo"
     }
   ],
   //--------------------------------------------------------------------------
